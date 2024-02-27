@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import BackgroundImage from '../images/BackgroundImage.jpg';
 
 
 function Register() {
@@ -24,12 +23,7 @@ const handleSubmit = (e) => {
 
 return (
     <div>
-    <div className="d-flex justify-content-center align-items-center bg-secondary vh-100" style={{ 
-                backgroundImage: `url(${BackgroundImage})`,
-                backgroundSize: 'cover', // cover the entire width and height
-                height: '100vh', // full height
-                width: '100vw' // full width
-            }}>
+    <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
         <div className="bg-white p-3 rounded w-25">
         <h2>Register</h2>
         <form onSubmit={handleSubmit}>

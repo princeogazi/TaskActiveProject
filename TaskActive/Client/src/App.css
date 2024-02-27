@@ -20,10 +20,14 @@
 }
 
 .task-header {
-    height: 200px;
-    width: 100%;
-    background-color: red;
-    padding-top: 50px;
+    height: 100%;
+    width: 80%;
+    background-color: white;
+    padding-top: 25px;
+    margin-left: 160px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    border-radius: 20px;
 }
 
 .card-container {
@@ -65,6 +69,11 @@
     text-align: center;
 }
 
+.title-header {
+    margin-top: 10px;
+    text-align: center;
+}
+
 .task-container {
     height: 600px;
     width: 100%;
@@ -72,4 +81,62 @@
     flex-wrap: wrap;
     background-color: #F6F7F8;
     padding: 40px 100px;
+    margin-bottom: 10px;
+}
+
+.flex-container {
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.flexbox1 {
+    background-color: red;
+    width: 40%;
+    font-size: 30px;
+    padding-top: 200px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    justify-items: center;
+    margin-bottom: 10px;
+}
+
+.flexbox2 {
+    border-radius: 5px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin-left: 15em;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1em 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    margin-left: 160px;
 }

@@ -27,11 +27,10 @@ useEffect(() => {
 
 const handleUpdate = (e) => {
     e.preventDefault();
-    let tempObj = {}
     taskObj['Title'] = taskTitle;
     taskObj['Description'] = description;
     taskObj['DeadlineDate'] = deadlineDate;
-    updateTask(tempObj)
+    updateTask(taskObj)
 };
 
 return (
@@ -40,7 +39,7 @@ return (
         <b>Update Task</b>
     </ModalHeader>
     <ModalBody>
-        <form action='PATCH'>
+        <form>
         <div className='form-group'>
             <label htmlFor='title'>
             <b>Title</b>
@@ -51,6 +50,7 @@ return (
             value={taskTitle}
             onChange={handleChange}
             name='title'
+            id='title'
             />
         </div>
         <br />
