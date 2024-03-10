@@ -5,7 +5,6 @@ function Navbar() {
         <ul>
             <li><h4><Link to='/dashboard'>Home</Link></h4></li>
             <li><h4><Link to='/tasks'>All Tasks</Link></h4></li>
-            <li><h4><Link to='/profile'>Profile</Link></h4></li>
         </ul>
     </nav>
 }

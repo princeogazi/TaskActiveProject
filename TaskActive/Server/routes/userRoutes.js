@@ -18,7 +18,9 @@ router.post('/register', async (req, res) => {
             return res.status(400).send({ error: 'Name, email, and password are required' });
         }
 
-        const user = new User({ name, email, password });
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const user = new User({ name, email, password: hashedPassword });
+        
         await user.save();
         res.status(201).send({ user, message: 'Registration successful, Account created' });
     } catch (err) {
@@ -46,7 +48,7 @@ router.post('/login', async (req, res) => {
 
         const token = jwt.sign({
             _id: user._id
-        }, JWT_SECRET_KEY = 'ta123', {expiresIn: '1 day'});
+        }, process.env.JWT_SECRET_KEY, {expiresIn: '1 day'});
 
         res.send({ user, token , message: "Logged in successfully"});
     }

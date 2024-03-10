@@ -5,7 +5,7 @@ const auth = require('../middlewares/auth');
 
 router.get('/', auth, (req, res) => {
     res.json({
-        messasge: 'Task routes are working',
+        message: 'Task routes are working',
         user: req.user});
 });
 

@@ -14,6 +14,12 @@ app.use(cors({
     credentials: true
 }))
 
+app.use(cors({
+    origin: ['http://localhost:3000/tasks'],
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+    credentials: true
+}))
+
 app.use(bodyParser.json());
 
 require('dotenv').config();

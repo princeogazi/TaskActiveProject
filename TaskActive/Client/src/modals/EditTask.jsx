@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import axios from 'axios';
 
 export const EditTask = ({ modal, toggle, updateTask, taskObj }) => {
     const [taskTitle, setTaskTitle] = useState('');
@@ -25,12 +26,25 @@ useEffect(() => {
     setDeadlineDate(taskObj.DeadlineDate)
 },[taskObj.DeadlineDate, taskObj.Description, taskObj.Title])
 
-const handleUpdate = (e) => {
+const handleUpdate = async (e) => {
     e.preventDefault();
     taskObj['Title'] = taskTitle;
     taskObj['Description'] = description;
     taskObj['DeadlineDate'] = deadlineDate;
     updateTask(taskObj)
+
+    try {
+        const response = await axios.patch('http://localhost:3000/:id', {taskObj});
+        if (response.status === 200) {
+            alert('Task updated successfully');
+            console.log('Task updated successfully');
+            toggle();
+        } else {
+            console.error('Error updating task:', response.data);
+        }
+    } catch (error) {
+        console.error('Error updating task:', error.message);
+    }
 };
 
 return (

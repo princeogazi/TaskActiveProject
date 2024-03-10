@@ -5,6 +5,9 @@ const MONGO_URL = 'mongodb+srv://princewillogazi:Ogazi1997@cluster0.yhtitwh.mong
 const DB_NAME = process.env.DB_NAME;
 
 mongoose.connect(MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}, {
     dbName: DB_NAME
 }).then(() => {
     console.log('Connected to MongoDB');
